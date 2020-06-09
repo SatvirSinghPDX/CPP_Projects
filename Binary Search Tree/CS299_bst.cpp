@@ -14,10 +14,12 @@ int table::remove_largest(node *& root)
     }
     return remove_largest(root->right);
 }
+
 int table::remove_largest()
 {
     return remove_largest(root);
 }
+
 int table::display_smaller(node * root)
 {
     int count = 0;
@@ -30,10 +32,12 @@ int table::display_smaller(node * root)
     }
     return count + display_smaller(root->left) + display_smaller(root->right);
 }
+
 int table::display_smaller()
 {
     return display_smaller(root->left);
 }
+
 int table::count_larger(node * root, int small)
 {
     int count = 0;
@@ -43,14 +47,17 @@ int table::count_larger(node * root, int small)
         count++;
     return count + count_larger(root->left,small) + count_larger(root->right,small);
 }
+
 int table::count_larger(node * root)
 {
     return count_larger(root,smallest(root));
 }
+
 int table::count_larger()
 {
     return count_larger(root);
 }
+
 int table::smallest(node * root)
 {
     if(!root)
@@ -59,10 +66,12 @@ int table::smallest(node * root)
         return root->data;
     return smallest(root->left);
 }
+
 int table::smallest()
 {
     return smallest(root);
 }
+
 int table::remove_leaf(node *& root)
 {
     int count = 0;
@@ -83,10 +92,12 @@ int table::remove_leaf(node *& root)
     }
     return count + remove_leaf(root->left) + remove_leaf(root->right);
 }
+
 int table::remove_leaf()
 {
     return remove_leaf(root);
 }
+
 int table::copy_multiples(node *& new_root, node * source_root)
 {
     int count = 0;
@@ -102,10 +113,12 @@ int table::copy_multiples(node *& new_root, node * source_root)
     }
     return copy_multiples(new_root,source_root->left) + copy_multiples(new_root,source_root->right);
 }
+
 int table::copy_multiples(table & new_copy)
 {
     return copy_multiples(this->root,new_copy.root);
 }
+
 bool table::insert(node *& root, int to_add)
 {
     if(!root)
@@ -122,10 +135,12 @@ bool table::insert(node *& root, int to_add)
     insert(root->right,to_add); 
     return true;
 }
+
 bool table::insert(int to_add)
 {
     return insert(root,to_add);
 }
+
 int table::copy(node *& new_root, node * source_root)
 {
     int count = 0;
@@ -139,10 +154,12 @@ int table::copy(node *& new_root, node * source_root)
     count++;
     return count+copy(new_root->left,source_root->left)+copy(new_root->right,source_root->right);
 }
+
 int table::copy(table & new_copy)
 {
     return copy(this->root,new_copy.root);
 }
+
 int table::copy_average(node *& new_root, node * source_root, float sum, int count)
 {
     if(!source_root)
@@ -155,14 +172,17 @@ int table::copy_average(node *& new_root, node * source_root, float sum, int cou
     sum+=new_root->data + copy_average(new_root->left,source_root->left,sum,count)+copy_average(new_root->right,source_root->right,sum,count);
     return sum; 
 }
+
 int table::copy_average(node *& new_root, node * source_root)
 {
     return copy_average(new_root,source_root,0,0);
 }
+
 int table::copy_average(table & new_copy)
 {
     return copy_average(this->root,new_copy.root);
 }
+
 int table::transform(node * root, node *& root_lll)
 {
     if(!root)
@@ -177,10 +197,12 @@ int table::transform(node * root, node *& root_lll)
     transform(root->right,root_lll);
     return 1;
 }
+
 int table::transform(table & to_copy)
 {
     return transform(to_copy.root,this->root);
 }
+
 int table::sum(node * root, int sum_total)
 {
     if(!root)
@@ -188,10 +210,12 @@ int table::sum(node * root, int sum_total)
     sum_total+=root->data + sum(root->left,sum_total) + sum(root->right,sum_total);
     return sum_total;
 }
+
 int table::sum()
 {
     return sum(root,0);
 }
+
 int table::remove_two_largest(node *& root)
 {
     if(!root)
@@ -226,10 +250,12 @@ int table::remove_two_largest(node *& root)
     } 
     return remove_two_largest(root->right);
 }
+
 int table::remove_two_largest()
 {
     return remove_two_largest(root);
 }
+
 int table::remove_inorder_right(node *& root)
 {
     int count = 0;
@@ -243,10 +269,12 @@ int table::remove_inorder_right(node *& root)
     }
     return remove_inorder_right(root->left);
 }
+
 int table::remove_inorder_right()
 {
     return remove_inorder_right(root->right);
 }
+
 int table::remove_all_but_inorder(node *& root)
 {
     if(!root)
@@ -264,12 +292,14 @@ int table::remove_all_but_inorder(node *& root)
     }
     return remove_all_but_inorder(root->left);
 }
+
 int table::remove_all_but_inorder()
 {
     delete root->left;
     root->left = NULL;
     return remove_all_but_inorder(root->right); 
 }
+
 int table::remove_non_leaves(node *& root)
 {
     int count = 0;
@@ -332,10 +362,12 @@ int table::remove_non_leaves(node *& root)
     }
     return count + remove_non_leaves(root->left) + remove_non_leaves(root->right);
 }
+
 int table::remove_non_leaves()
 {
     return remove_non_leaves(root);
 }
+
 int table::count_leaves(node * root)
 {
     int count = 0;
@@ -345,10 +377,12 @@ int table::count_leaves(node * root)
         count++;
     return count + count_leaves(root->left) + count_leaves(root->right);
 }
+
 int table::count_leaves()
 {
     return count_leaves(root);
 }
+
 bool table::is_leaf(node * root)
 {
     if(!root)
@@ -357,6 +391,7 @@ bool table::is_leaf(node * root)
         return true;
     return is_leaf(root->left) && is_leaf(root->right);
 }
+
 float table::average(node * root, int& count)
 {
     if(!root)
@@ -366,6 +401,7 @@ float table::average(node * root, int& count)
     count++;
     return root->data + average(root->left,count) + average(root->right,count);
 }
+
 float table::average()
 {
     int count = 0;
