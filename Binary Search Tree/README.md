@@ -1,0 +1,19 @@
+## Binary Search Tree functions implemented in these files:
+- Remove largest node
+- Display smaller of two nodes
+- Count number of nodes larger than supplied value
+- Find the smallest node in BST
+- Remove all leaf nodes
+- Copy all nodes divisible by 3 into new BST
+- Insert node into BST
+- Basic BST copy
+- Copy BST while returning the average of all nodes
+- Transform BST into Linear Linked List
+- Return the sum of all nodes in BST
+- Remove the two largest nodes in BST
+- Remove in order right
+- Remove all but in order right
+- Remove all non leaves
+- Count the number of leaves in BST
+- Check whether supplied node is a leaf or not
+- Return the average of all nodes in BST
