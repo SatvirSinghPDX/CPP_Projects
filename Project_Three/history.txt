@@ -1,0 +1,6 @@
+The data for historical races for this person
+------------------------------------------------------
+Type of race: Swimming  Year: 2003  Position: 2nd place
+Type of race: Sprinting  Year: 2005  Position: 7th place
+Type of race: Running  Year: 2007  Position: 1st place
+-------------------------------------------------------
