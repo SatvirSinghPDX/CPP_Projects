@@ -1,0 +1,13 @@
+## Linear Linked List functions implemented in these files:
+- Remove last two nodes
+- Find the average of all the nodes
+- Move the head to the end of the list
+- Remove all nodes except the last
+- Find the largest node
+- Remove the last two nodes
+- Check if a given value exists in the LLL
+- Remove the last node
+- Display the last node
+- Copy the LLL excluding nodes that have a value of 2
+- Return the second to last node
+- If head is greater than tail, remove the head
